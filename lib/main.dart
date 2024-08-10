@@ -1,5 +1,5 @@
+import 'package:app_widgets/config/goRuter/go_router.dart';
 import 'package:app_widgets/config/theme/app_theme.dart';
-import 'package:app_widgets/presentation/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,10 +11,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 6).getTheme(),
-      home: const HomeScreen()
+      theme: AppTheme(selectedColor: 1).getTheme(),
     );
   }
 }
