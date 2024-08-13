@@ -33,4 +33,10 @@ final appMenuItems = <MenuItem>[
     link: '/progress',
     icon: Icons.show_chart_sharp,
   ),
+  MenuItem(
+    title: 'Snackbars y Dialogs',
+    subTitle: 'Indicadores en pantalla',
+    link: '/snackbars',
+    icon: Icons.messenger_rounded,
+  ),
 ];
