@@ -39,4 +39,10 @@ final appMenuItems = <MenuItem>[
     link: '/snackbars',
     icon: Icons.messenger_rounded,
   ),
+  MenuItem(
+    title: 'Animated Container',
+    subTitle: 'Contenedor animado',
+    link: '/animated',
+    icon: Icons.move_down_rounded,
+  ),
 ];
