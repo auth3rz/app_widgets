@@ -1,5 +1,4 @@
 import 'package:app_widgets/presentation/screens/screens.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(
@@ -7,20 +6,29 @@ final appRouter = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: '/',
-      builder: (BuildContext context, GoRouterState state) {
+      name: HomeScreen.name,
+      builder: (context, state) {
         return const HomeScreen();
       },
     ),
     GoRoute(
       path: '/cards',
-      builder: (BuildContext context, GoRouterState state) {
+      builder: (context, state) {
         return const CardsScreen();
       },
     ),
     GoRoute(
       path: '/buttons',
-      builder: (BuildContext context, GoRouterState state) {
+      name: ButtonsScreen.name,
+      builder: (context, state) {
         return const ButtonsScreen();
+      },
+    ),
+    GoRoute(
+      path: '/progress',
+      name: ProgressScreen.name,
+      builder: (context, state) {
+        return const ProgressScreen();
       },
     ),
   ],

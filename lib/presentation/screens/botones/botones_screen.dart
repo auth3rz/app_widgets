@@ -1,10 +1,11 @@
 import 'package:app_widgets/config/responsive_size.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class ButtonsScreen extends StatelessWidget {
   const ButtonsScreen({super.key});
+
+  static String name = 'buttons_screen';
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
+  static String name = 'Home screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
