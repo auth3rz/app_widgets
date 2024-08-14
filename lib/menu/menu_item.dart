@@ -45,4 +45,10 @@ final appMenuItems = <MenuItem>[
     link: '/animated',
     icon: Icons.move_down_rounded,
   ),
+  MenuItem(
+    title: 'UI - Controls',
+    subTitle: 'Controles de interfaz',
+    link: '/ui-controls',
+    icon: Icons.display_settings,
+  ),
 ];

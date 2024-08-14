@@ -7,6 +7,67 @@ class UiControlsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('UI - Controls'),
+      ),
+      body: const _UiControlsView(),
+    );
+  }
+}
+
+class _UiControlsView extends StatefulWidget {
+  const _UiControlsView();
+
+  @override
+  State<_UiControlsView> createState() => _UiControlsViewState();
+}
+
+enum Formas {square, circle, triangle, rectangle}
+
+
+class _UiControlsViewState extends State<_UiControlsView> {
+
+  bool isDeveloper = true;
+
+  Formas formas = Formas.square;
+
+  IconData muestra = Icons.square;
+
+
+  @override
+  Widget build(BuildContext context) {
+    final color = Theme.of(context).colorScheme;
+    return ListView(
+      physics: const ClampingScrollPhysics(),
+      children: [
+        SwitchListTile(
+          title: const Text('Developer Mode'),
+          subtitle: const Text('Controles adicionales'),
+          value: isDeveloper,
+          onChanged: (v) => setState(() => isDeveloper = v)
+        ),
+        radioR('square',    'cuadrada',    Formas.square,    Icons.square),
+        radioR('circle',    'circular',    Formas.circle,    Icons.circle),
+        radioR('triangle',  'triangular',  Formas.triangle,  Icons.play_arrow_sharp),
+        radioR('rectangle', 'rectangular', Formas.rectangle, Icons.rectangle),
+        Center(child: Icon(
+          muestra, color: isDeveloper ? color.primary : color.inversePrimary,
+        ))
+      ],
+    );
+  }
+
+  Widget radioR(String tit, String subTit, Formas estaF, IconData elIco) {
+    return RadioListTile(
+      title     : Text(tit),
+      subtitle  : Text('la forma es $subTit'),
+      value     : estaF,
+      groupValue: formas,
+      onChanged : (v) => setState(() {
+        formas  = v!;
+        muestra = elIco;
+      })
+    );
   }
 }
