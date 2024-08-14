@@ -13,7 +13,7 @@ class ProgressScreen extends StatelessWidget {
         title: const Text('Progress Indicators'),
         centerTitle: false,
       ),
-      body: _ProgressView(),
+      body: const _ProgressView(),
     );
   }
 }

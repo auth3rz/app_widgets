@@ -28,12 +28,14 @@ enum Formas {square, circle, triangle, rectangle}
 
 class _UiControlsViewState extends State<_UiControlsView> {
 
-  bool isDeveloper = true;
+  bool isDeveloper    = true;
+  bool quiereDesayuno = false;
+  bool quiereAlmuerzo = false;
+  bool quiereCena     = false;
 
   Formas formas = Formas.square;
 
   IconData muestra = Icons.square;
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +49,34 @@ class _UiControlsViewState extends State<_UiControlsView> {
           value: isDeveloper,
           onChanged: (v) => setState(() => isDeveloper = v)
         ),
-        radioR('square',    'cuadrada',    Formas.square,    Icons.square),
-        radioR('circle',    'circular',    Formas.circle,    Icons.circle),
-        radioR('triangle',  'triangular',  Formas.triangle,  Icons.play_arrow_sharp),
-        radioR('rectangle', 'rectangular', Formas.rectangle, Icons.rectangle),
+        ExpansionTile(
+          title: const Text('Forma geométrica'),
+          subtitle: Text('$formas'),
+          children: [
+            radioR('square',    'cuadrada',    Formas.square,    Icons.square),
+            radioR('circle',    'circular',    Formas.circle,    Icons.circle),
+            radioR('triangle',  'triangular',  Formas.triangle,  Icons.play_arrow_sharp),
+            radioR('rectangle', 'rectangular', Formas.rectangle, Icons.rectangle),
+          ],
+        ),
         Center(child: Icon(
           muestra, color: isDeveloper ? color.primary : color.inversePrimary,
-        ))
+        )),
+        CheckboxListTile(
+          title: const Text('¿Quiere desayuno?'),
+          value: quiereDesayuno,
+          onChanged: (v) => setState(() => quiereDesayuno = v!),
+        ),
+        CheckboxListTile(
+          title: const Text('¿Quiere almuerzo?'),
+          value: quiereAlmuerzo,
+          onChanged: (v) => setState(() => quiereAlmuerzo = v!),
+        ),
+        CheckboxListTile(
+          title: const Text('¿Quiere cena?'),
+          value: quiereCena,
+          onChanged: (v) => setState(() => quiereCena = v!),
+        )
       ],
     );
   }
