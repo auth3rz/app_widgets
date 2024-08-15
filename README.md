@@ -1,3 +1,3 @@
 # app_widgets
 
-A new Flutter project.
+Ejercicio widgets app del curso de Fernando Herrera.
