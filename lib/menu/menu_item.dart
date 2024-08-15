@@ -51,4 +51,10 @@ final appMenuItems = <MenuItem>[
     link: '/ui-controls',
     icon: Icons.display_settings,
   ),
+  MenuItem(
+    title: 'Intro del app',
+    subTitle: 'Introducción de mi app',
+    link: '/intro',
+    icon: Icons.video_collection,
+  ),
 ];
