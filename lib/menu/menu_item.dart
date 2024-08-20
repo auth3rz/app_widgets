@@ -57,4 +57,10 @@ final appMenuItems = <MenuItem>[
     link: '/intro',
     icon: Icons.video_collection,
   ),
+  MenuItem(
+    title: 'Infinite scroll y pull',
+    subTitle: 'Listas infinitas y pull to refresh',
+    link: '/scroll',
+    icon: Icons.format_line_spacing_outlined,
+  ),
 ];
