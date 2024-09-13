@@ -25,29 +25,31 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   }
 
   Future<void> onRefresh() async {
-    isLoading = true;
-    setState(() {});
+    cambiaLoading(true);
+
     await Future.delayed(const Duration(seconds: 2));
     if (!isMounted) return;
     final lastId = imagesIds.last;
     imagesIds.clear();
     imagesIds.add(lastId+1);
     agregaCincoMas();
-    isLoading = false;
-    setState(() {});
+
+    cambiaLoading(false);
   }
+
+  void cambiaLoading(bool data) => setState(() => isLoading = data);
 
   Future loadNextPage() async {
     if (isLoading) return;
-    isLoading = true;
-    setState(() {});
+    cambiaLoading(true);
 
     await Future.delayed(const Duration(seconds: 2));
 
     agregaCincoMas();
-    isLoading = false;
+
+    cambiaLoading(false);
+
     if (!isMounted) return;
-    setState(() {});
     moveScrollToBottom();
   }
 
@@ -56,7 +58,7 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
     controller.animateTo(
       controller.position.pixels +120, 
       duration: const Duration(milliseconds: 300),
-      curve: Curves.fastOutSlowIn
+      curve: Curves.easeIn
     );
   }
 
@@ -118,7 +120,7 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
             color: Theme.of(context).colorScheme.surface,
           ),
         ) :
-         Icon(
+        Icon(
           Icons.arrow_back,
           color: Theme.of(context).colorScheme.surface,
         ),

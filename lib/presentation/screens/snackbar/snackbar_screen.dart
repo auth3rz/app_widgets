@@ -63,12 +63,12 @@ class SnackbarScreen extends StatelessWidget {
         onPressed: () => showCustomSnackbar(context),
         label: Text(
           'Mostrar Snackbar',
-          style: TextStyle(color: color.primary),
+          style: TextStyle(color: color.surface),
         ),
         backgroundColor: color.secondaryFixed,
         icon: Icon(
           Icons.remove_red_eye_outlined,
-          color: color.primary,
+          color: color.surface,
         ),
       ),
     );

@@ -63,4 +63,16 @@ final appMenuItems = <MenuItem>[
     link: '/scroll',
     icon: Icons.format_line_spacing_outlined,
   ),
+  MenuItem(
+    title: 'Contador con Riverpod',
+    subTitle: 'Contador básico de flutter usando Riverpod Provider',
+    link: '/counter',
+    icon: Icons.add,
+  ),
+  MenuItem(
+    title: 'Theme Changer Screen',
+    subTitle: 'Cambiar color base del theme y el modo oscuro',
+    link: '/theme',
+    icon: Icons.sunny,
+  ),
 ];

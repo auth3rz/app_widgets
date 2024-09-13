@@ -66,5 +66,19 @@ final appRouter = GoRouter(
         return const InfiniteScrollScreen();
       },
     ),
+    GoRoute(
+      path: '/counter',
+      name: CounterScreen.name,
+      builder: (context, state) {
+        return const CounterScreen();
+      },
+    ),
+    GoRoute(
+      path: '/theme',
+      name: ThemeChangerScreen.name,
+      builder: (context, state) {
+        return const ThemeChangerScreen();
+      },
+    ),
   ],
 );
